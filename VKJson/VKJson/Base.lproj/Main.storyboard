@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VKJson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9k-hT-oc4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P9k-hT-oc4" secondAttribute="trailing" id="82p-Gi-2Wn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P9k-hT-oc4" secondAttribute="bottom" id="Aj9-sV-fkX"/>
+                            <constraint firstItem="P9k-hT-oc4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IbD-I7-XFG"/>
+                            <constraint firstItem="P9k-hT-oc4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ceO-KO-6Ab"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="P9k-hT-oc4" id="R9H-CB-WV0"/>
+                        <segue destination="LCh-YH-9FE" kind="show" identifier="ShowRequestController" id="pf0-9b-MZh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="104"/>
+        </scene>
+        <!--Request View Controller-->
+        <scene sceneID="fZb-jy-bfH">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="LCh-YH-9FE" customClass="RequestViewController" customModule="VKJson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BWG-7L-fSd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwX-Xw-Ho0">
+                                <rect key="frame" x="94" y="105" width="239" height="54"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="Trl-4m-msT"/>
+                                    <constraint firstAttribute="height" constant="54" id="shq-Td-Yel"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Список друзей">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFriendsList:" destination="LCh-YH-9FE" eventType="touchUpInside" id="LjE-zp-f4R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8c-V0-xwR">
+                                <rect key="frame" x="94" y="221" width="239" height="55"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="3pC-ZS-oCB"/>
+                                    <constraint firstAttribute="width" constant="239" id="TSl-vc-LVu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Фотки">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPhotos:" destination="LCh-YH-9FE" eventType="touchUpInside" id="Wv4-Ft-fW1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwS-gy-WQ6">
+                                <rect key="frame" x="94" y="341" width="239" height="52"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="CFI-Fy-juA"/>
+                                    <constraint firstAttribute="width" constant="239" id="Rle-Dh-7fO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Группки">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showGroups:" destination="LCh-YH-9FE" eventType="touchUpInside" id="cp7-LC-1ey"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOQ-2T-Cig">
+                                <rect key="frame" x="94" y="450" width="239" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ml0-iw-wic"/>
+                                    <constraint firstAttribute="width" constant="239" id="Npp-k0-b5w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwt-gm-kcG">
+                                <rect key="frame" x="94" y="545" width="239" height="45"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="o7y-HR-Rcm"/>
+                                    <constraint firstAttribute="height" constant="45" id="vce-Wa-CL4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Искать группы">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchGroups:" destination="LCh-YH-9FE" eventType="touchUpInside" id="als-SS-cIQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ju1-vZ-JXa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zwt-gm-kcG" firstAttribute="leading" secondItem="Ju1-vZ-JXa" secondAttribute="leading" constant="94" id="0mt-k0-xvA"/>
+                            <constraint firstItem="NOQ-2T-Cig" firstAttribute="top" secondItem="wwS-gy-WQ6" secondAttribute="bottom" constant="57" id="2HU-5V-nP3"/>
+                            <constraint firstItem="Ju1-vZ-JXa" firstAttribute="trailing" secondItem="LwX-Xw-Ho0" secondAttribute="trailing" constant="81" id="3CW-CG-tGC"/>
+                            <constraint firstItem="NOQ-2T-Cig" firstAttribute="leading" secondItem="Ju1-vZ-JXa" secondAttribute="leading" constant="94" id="Bj2-R2-yOw"/>
+                            <constraint firstItem="wwS-gy-WQ6" firstAttribute="top" secondItem="K8c-V0-xwR" secondAttribute="bottom" constant="65" id="GZ4-DH-ssb"/>
+                            <constraint firstItem="LwX-Xw-Ho0" firstAttribute="leading" secondItem="Ju1-vZ-JXa" secondAttribute="leading" constant="94" id="Oll-i9-LP3"/>
+                            <constraint firstItem="wwS-gy-WQ6" firstAttribute="leading" secondItem="Ju1-vZ-JXa" secondAttribute="leading" constant="94" id="QC9-aP-qhq"/>
+                            <constraint firstItem="LwX-Xw-Ho0" firstAttribute="top" secondItem="Ju1-vZ-JXa" secondAttribute="top" constant="61" id="YOc-mc-e81"/>
+                            <constraint firstItem="K8c-V0-xwR" firstAttribute="top" secondItem="LwX-Xw-Ho0" secondAttribute="bottom" constant="62" id="cBl-lq-Yb4"/>
+                            <constraint firstItem="zwt-gm-kcG" firstAttribute="top" secondItem="NOQ-2T-Cig" secondAttribute="bottom" constant="45" id="hfR-Yu-f3f"/>
+                            <constraint firstItem="K8c-V0-xwR" firstAttribute="leading" secondItem="Ju1-vZ-JXa" secondAttribute="leading" constant="94" id="kZU-hn-KeF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b8E-Td-IKC"/>
+                    <connections>
+                        <outlet property="groupsForSearch" destination="NOQ-2T-Cig" id="uSz-S1-R6p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PWM-IO-rJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.85507246376824" y="108.48214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
